@@ -33,12 +33,13 @@ void loop()  {
  
     for(int i = 2;i <= 18;i++)
   {
+          Serial.print("PIN:");
+      Serial.println(i);
     
     for(int s = 0;s <= 100;s++)
     {
       delay(1);
-      Serial.print("PIN:");
-      Serial.println(14);
+
       analogWrite(14, brightness); 
             // change the brightness for next time through the loop:
       brightness = brightness + fadeAmount;
