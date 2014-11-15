@@ -3,7 +3,7 @@
  
  This example shows how to fade an LED on pin 9
  using the analogWrite() function.
- 
+ setxkbmap -model pc105 -layout de
  This example code is in the public domain.
  */
 
@@ -16,7 +16,7 @@ int fadeAmount = 5;    // how many points to fade the LED by
 void setup()  { 
   // declare pin 9 to be an output:
   Serial.begin(9600);
-  for(int i = 2;i <= 13;i++)
+  for(int i = 2;i <= 18;i++)
   {
      pinMode(i,OUTPUT); 
   }
@@ -31,10 +31,10 @@ void setup()  {
 void loop()  { 
   // set the brightness of pin 9:
  
-    for(int i = 2;i <= 13;i++)
+    for(int i = 2;i <= 18;i++)
   {
     
-    for(int s = 0;s <= 500;s++)
+    for(int s = 0;s <= 100;s++)
     {
       delay(1);
       Serial.print("PIN:");
