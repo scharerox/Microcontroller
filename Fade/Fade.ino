@@ -7,7 +7,8 @@
  This example code is in the public domain.
  */
 
-int led = 4<           // the pin that the LED is attached to
+
+
 int brightness = 0;    // how bright the LED is
 int fadeAmount = 5;    // how many points to fade the LED by
 
@@ -16,11 +17,33 @@ void setup()  {
   // declare pin 9 to be an output:
   Serial.begin(9600);
   pinMode(led, OUTPUT);
+  for(int i = 2;i <= 13;i++)
+  {
+     pinMode(i,OUTPUT); 
+  }
+  
+  for(int i = 0; i <= 7;i++)
+  {
+    pinMode(i,INPUT);
+  }
 } 
 
 // the loop routine runs over and over again forever:
 void loop()  { 
   // set the brightness of pin 9:
+ 
+    for(int i = 2;i <= 13;i++)
+  {
+    
+    for(int s = 0;s <= 1000;s++)
+    {
+      delay(1);
+      Serial.print("PIN:");
+      Serial.println(i);
+      analogWrite(i, brightness); 
+    } 
+  }
+  
   analogWrite(led, brightness);    
 
   // change the brightness for next time through the loop:
