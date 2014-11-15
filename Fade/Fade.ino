@@ -40,7 +40,7 @@ void loop()  {
     {
       delay(1);
 
-      analogWrite(14, brightness); 
+      analogWrite(i, brightness); 
             // change the brightness for next time through the loop:
       brightness = brightness + fadeAmount;
     
