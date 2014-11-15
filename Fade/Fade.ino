@@ -38,8 +38,8 @@ void loop()  {
     {
       delay(1);
       Serial.print("PIN:");
-      Serial.println(i);
-      analogWrite(i, brightness); 
+      Serial.println(14);
+      analogWrite(14, brightness); 
             // change the brightness for next time through the loop:
       brightness = brightness + fadeAmount;
     
@@ -48,7 +48,7 @@ void loop()  {
         fadeAmount = -fadeAmount ; 
       }     
       // wait for 30 milliseconds to see the dimming effect    
-      delay(30);
+      delay(10);
     } 
   }
   
@@ -62,6 +62,5 @@ void loop()  {
     }    
 
  
-  Serial.println("Piep"); 
 }
 
