@@ -30,13 +30,14 @@ void setup()  {
 void loop()  { 
   // set the brightness of pin 9:
 
+    int values[8];
+    
+
    for(int i = 0;i <= 7;i++)
     {
-      int analogInput = analogRead(i);
-      Serial.print("AnalogPin: ");
-      Serial.print(i);
-      Serial.print(" Value: ");
-      Serial.println(analogInput);
+      values[i] = analogRead(i);
+      
+;
       
       for(int s = 0;s <= 200;s++)
       {
@@ -48,6 +49,15 @@ void loop()  {
       
       
     }    
+    
+    for(int i = 0;i < 8;i++)
+    {
+      Serial.print("$AnalogPin: ");
+      Serial.print(i);
+      Serial.print(values[i]);
+    }
+    
+      Serial.println("");
 
    
 }
