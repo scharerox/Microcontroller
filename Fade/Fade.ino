@@ -16,7 +16,6 @@ int fadeAmount = 5;    // how many points to fade the LED by
 void setup()  { 
   // declare pin 9 to be an output:
   Serial.begin(9600);
-  pinMode(led, OUTPUT);
   for(int i = 2;i <= 13;i++)
   {
      pinMode(i,OUTPUT); 
@@ -35,26 +34,34 @@ void loop()  {
     for(int i = 2;i <= 13;i++)
   {
     
-    for(int s = 0;s <= 1000;s++)
+    for(int s = 0;s <= 500;s++)
     {
       delay(1);
       Serial.print("PIN:");
       Serial.println(i);
       analogWrite(i, brightness); 
+            // change the brightness for next time through the loop:
+      brightness = brightness + fadeAmount;
+    
+      // reverse the direction of the fading at the ends of the fade: 
+      if (brightness == 0 || brightness == 255) {
+        fadeAmount = -fadeAmount ; 
+      }     
+      // wait for 30 milliseconds to see the dimming effect    
+      delay(30);
     } 
   }
   
-  analogWrite(led, brightness);    
+   for(int i = 0;i <= 7;i++)
+    {
+      int analogInput = analogRead(i);
+      Serial.print("AnalogPin: ");
+      Serial.print(i);
+      Serial.print(" Value: ");
+      Serial.println(analogInput);
+    }    
 
-  // change the brightness for next time through the loop:
-  brightness = brightness + fadeAmount;
-
-  // reverse the direction of the fading at the ends of the fade: 
-  if (brightness == 0 || brightness == 255) {
-    fadeAmount = -fadeAmount ; 
-  }     
-  // wait for 30 milliseconds to see the dimming effect    
-  delay(30); 
+ 
   Serial.println("Piep"); 
 }
 
