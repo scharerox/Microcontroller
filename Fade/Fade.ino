@@ -40,7 +40,7 @@ void loop()  {
     {
       delay(1);
 
-      analogWrite(i, brightness); 
+      analogWrite(18, brightness); 
             // change the brightness for next time through the loop:
       brightness = brightness + fadeAmount;
     
@@ -49,7 +49,7 @@ void loop()  {
         fadeAmount = -fadeAmount ; 
       }     
       // wait for 30 milliseconds to see the dimming effect    
-      delay(30);
+      delay(20);
     } 
   }
   
