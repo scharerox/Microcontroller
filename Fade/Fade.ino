@@ -14,6 +14,7 @@ int fadeAmount = 5;    // how many points to fade the LED by
 // the setup routine runs once when you press reset:
 void setup()  { 
   // declare pin 9 to be an output:
+  Serial.begin(9600);
   pinMode(led, OUTPUT);
 } 
 
@@ -30,6 +31,7 @@ void loop()  {
     fadeAmount = -fadeAmount ; 
   }     
   // wait for 30 milliseconds to see the dimming effect    
-  delay(30);                            
+  delay(30); 
+  Serial.println("Piep"); 
 }
 
