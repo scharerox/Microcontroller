@@ -36,7 +36,7 @@ void loop()  {
           Serial.print("PIN:");
       Serial.println(i);
     
-    for(int s = 0;s <= 100;s++)
+    for(int s = 0;s <= 50;s++)
     {
       delay(1);
 
@@ -49,7 +49,7 @@ void loop()  {
         fadeAmount = -fadeAmount ; 
       }     
       // wait for 30 milliseconds to see the dimming effect    
-      delay(10);
+      delay(30);
     } 
   }
   
